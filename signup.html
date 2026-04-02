@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your account — Join us today and get started with a seamless experience.">
+    <title>Create Your Account | Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient-orb orb-1"></div>
+        <div class="bg-gradient-orb orb-2"></div>
+        <div class="bg-gradient-orb orb-3"></div>
+        <div class="bg-gradient-orb orb-4"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="page-wrapper">
+        <!-- Left Panel — Branding -->
+        <aside class="brand-panel">
+            <div class="brand-content">
+                <div class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span class="logo-text">NexusID</span>
+                </div>
+                <h1 class="brand-headline">Start Your<br><span class="gradient-text">Journey Today</span></h1>
+                <p class="brand-description">Join thousands of users who trust NexusID for a secure, seamless digital experience. Create your account in just a few steps.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item" style="--delay: 0.1s">
+                        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="feature-text">
+                            <strong>Bank-Grade Security</strong>
+                            <span>256-bit encryption keeps your data safe</span>
+                        </div>
+                    </div>
+                    <div class="feature-item" style="--delay: 0.2s">
+                        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="feature-text">
+                            <strong>Lightning Fast</strong>
+                            <span>Get started in under 60 seconds</span>
+                        </div>
+                    </div>
+                    <div class="feature-item" style="--delay: 0.3s">
+                        <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                        <div class="feature-text">
+                            <strong>Access Anywhere</strong>
+                            <span>Available on all devices, 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4.9">0</span><span class="stat-suffix">★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brand-footer">
+                <p class="team-credit">
+                    <span class="team-label">Developed by</span>
+                    <span class="team-members">Martaz Ahmad &bull; Danial Ahmad Khadim &bull; Danial Ahmad Anwar</span>
+                </p>
+            </div>
+        </aside>
+
+        <!-- Right Panel — Sign Up Form -->
+        <main class="form-panel">
+            <div class="form-container">
+                <div class="form-header">
+                    <div class="mobile-logo">
+                        <div class="logo-icon"><i class="fas fa-rocket"></i></div>
+                        <span class="logo-text">NexusID</span>
+                    </div>
+                    <h2 class="form-title">Create Your Account</h2>
+                    <p class="form-subtitle">Fill in your details to get started</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle"><span>1</span></div>
+                        <span class="step-label">Personal</span>
+                    </div>
+                    <div class="progress-line"><div class="progress-fill" id="progressFill1"></div></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle"><span>2</span></div>
+                        <span class="step-label">Contact</span>
+                    </div>
+                    <div class="progress-line"><div class="progress-fill" id="progressFill2"></div></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle"><span>3</span></div>
+                        <span class="step-label">Security</span>
+                    </div>
+                </div>
+
+                <form id="signupForm" novalidate>
+                    <!-- Step 1: Personal Info -->
+                    <div class="form-step active" id="step1">
+                        <div class="input-row">
+                            <div class="input-group" id="group-firstName">
+                                <label for="firstName">First Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required autocomplete="given-name">
+                                    <span class="input-focus-border"></span>
+                                </div>
+                                <span class="error-message" id="error-firstName"></span>
+                            </div>
+                            <div class="input-group" id="group-lastName">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" required autocomplete="family-name">
+                                    <span class="input-focus-border"></span>
+                                </div>
+                                <span class="error-message" id="error-lastName"></span>
+                            </div>
+                        </div>
+
+                        <div class="input-group" id="group-username">
+                            <label for="username">Username</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-at input-icon"></i>
+                                <input type="text" id="username" name="username" placeholder="Choose a unique username" required autocomplete="username">
+                                <span class="input-focus-border"></span>
+                                <span class="availability-indicator" id="usernameAvailability"></span>
+                            </div>
+                            <span class="error-message" id="error-username"></span>
+                        </div>
+
+                        <div class="input-group" id="group-dob">
+                            <label for="dob">Date of Birth</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar-days input-icon"></i>
+                                <input type="date" id="dob" name="dob" required>
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-dob"></span>
+                        </div>
+
+                        <div class="input-group" id="group-gender">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label class="radio-card" for="male">
+                                    <input type="radio" id="male" name="gender" value="male" required>
+                                    <div class="radio-card-content">
+                                        <i class="fas fa-mars"></i>
+                                        <span>Male</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card" for="female">
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <div class="radio-card-content">
+                                        <i class="fas fa-venus"></i>
+                                        <span>Female</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card" for="other">
+                                    <input type="radio" id="other" name="gender" value="other">
+                                    <div class="radio-card-content">
+                                        <i class="fas fa-genderless"></i>
+                                        <span>Other</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <span class="error-message" id="error-gender"></span>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-next" onclick="nextStep(1)">
+                            <span>Continue</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Contact Info -->
+                    <div class="form-step" id="step2">
+                        <div class="input-group" id="group-email">
+                            <label for="email">Email Address</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-email"></span>
+                        </div>
+
+                        <div class="input-group" id="group-phone">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" autocomplete="tel">
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-phone"></span>
+                        </div>
+
+                        <div class="input-group" id="group-country">
+                            <label for="country">Country</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-earth-americas input-icon"></i>
+                                <select id="country" name="country" required>
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="IN">India</option>
+                                    <option value="AE">UAE</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="CN">China</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-country"></span>
+                        </div>
+
+                        <div class="input-group" id="group-address">
+                            <label for="address">Address <span class="optional-tag">Optional</span></label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fas fa-location-dot input-icon"></i>
+                                <textarea id="address" name="address" placeholder="Enter your full address" rows="3" autocomplete="street-address"></textarea>
+                                <span class="input-focus-border"></span>
+                            </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn btn-secondary btn-back" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-next" onclick="nextStep(2)">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Security -->
+                    <div class="form-step" id="step3">
+                        <div class="input-group" id="group-password">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="password" name="password" placeholder="Create a strong password" required autocomplete="new-password">
+                                <button type="button" class="toggle-password" onclick="togglePassword('password', this)" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-password"></span>
+                            <!-- Password Strength Meter -->
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bars">
+                                    <div class="strength-bar"></div>
+                                    <div class="strength-bar"></div>
+                                    <div class="strength-bar"></div>
+                                    <div class="strength-bar"></div>
+                                </div>
+                                <span class="strength-text" id="strengthText">Password Strength</span>
+                            </div>
+                            <div class="password-requirements">
+                                <div class="requirement" id="req-length"><i class="fas fa-circle"></i> At least 8 characters</div>
+                                <div class="requirement" id="req-upper"><i class="fas fa-circle"></i> One uppercase letter</div>
+                                <div class="requirement" id="req-lower"><i class="fas fa-circle"></i> One lowercase letter</div>
+                                <div class="requirement" id="req-number"><i class="fas fa-circle"></i> One number</div>
+                                <div class="requirement" id="req-special"><i class="fas fa-circle"></i> One special character</div>
+                            </div>
+                        </div>
+
+                        <div class="input-group" id="group-confirmPassword">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required autocomplete="new-password">
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword', this)" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <span class="input-focus-border"></span>
+                            </div>
+                            <span class="error-message" id="error-confirmPassword"></span>
+                        </div>
+
+                        <div class="input-group checkbox-group" id="group-terms">
+                            <label class="checkbox-label" for="terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkbox-custom"><i class="fas fa-check"></i></span>
+                                <span class="checkbox-text">I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a></span>
+                            </label>
+                            <span class="error-message" id="error-terms"></span>
+                        </div>
+
+                        <div class="input-group checkbox-group">
+                            <label class="checkbox-label" for="newsletter">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkbox-custom"><i class="fas fa-check"></i></span>
+                                <span class="checkbox-text">Send me updates, tips, and special offers via email</span>
+                            </label>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn btn-secondary btn-back" onclick="prevStep(3)">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                                <span class="btn-text">Create Account</span>
+                                <span class="btn-loader"><i class="fas fa-circle-notch fa-spin"></i></span>
+                                <i class="fas fa-user-plus btn-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Social Sign Up -->
+                <div class="social-divider" id="socialDivider">
+                    <span>or sign up with</span>
+                </div>
+                <div class="social-buttons" id="socialButtons">
+                    <button class="btn-social btn-google" id="btnGoogleSignup" type="button">
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        <span>Google</span>
+                    </button>
+                    <button class="btn-social btn-facebook" id="btnFacebookSignup" type="button">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="btn-social btn-github" id="btnGithubSignup" type="button">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+
+                <p class="form-footer" id="formFooter">
+                    Already have an account? <a href="login.html" class="link">Sign In <i class="fas fa-arrow-right"></i></a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="success-animation">
+                <div class="success-checkmark">
+                    <svg viewBox="0 0 52 52">
+                        <circle cx="26" cy="26" r="25" fill="none"/>
+                        <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+            </div>
+            <h3>Account Created!</h3>
+            <p>Welcome aboard! Your account has been successfully created.</p>
+            <a href="login.html" class="btn btn-primary">
+                <span>Continue to Login</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

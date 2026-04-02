@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to your NexusID account — Secure authentication for your digital identity.">
+    <title>Login | NexusID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient-orb orb-1"></div>
+        <div class="bg-gradient-orb orb-2"></div>
+        <div class="bg-gradient-orb orb-3"></div>
+        <div class="bg-gradient-orb orb-4"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="page-wrapper">
+        <!-- Left Panel — Branding -->
+        <aside class="brand-panel">
+            <div class="brand-content">
+                <div class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span class="logo-text">NexusID</span>
+                </div>
+                <h1 class="brand-headline">Welcome<br><span class="gradient-text">Back!</span></h1>
+                <p class="brand-description">Sign in to access your dashboard, manage your profile, and stay connected with your personalized experience.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item" style="--delay: 0.1s">
+                        <div class="feature-icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="feature-text">
+                            <strong>Secure Login</strong>
+                            <span>Multi-factor authentication available</span>
+                        </div>
+                    </div>
+                    <div class="feature-item" style="--delay: 0.2s">
+                        <div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                        <div class="feature-text">
+                            <strong>Session Management</strong>
+                            <span>Control your active sessions anytime</span>
+                        </div>
+                    </div>
+                    <div class="feature-item" style="--delay: 0.3s">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="feature-text">
+                            <strong>Your Dashboard</strong>
+                            <span>Analytics and insights at a glance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4.9">0</span><span class="stat-suffix">★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brand-footer">
+                <p class="team-credit">
+                    <span class="team-label">Developed by</span>
+                    <span class="team-members">Martaz Ahmad &bull; Danial Ahmad Khadim &bull; Danial Ahmad Anwar</span>
+                </p>
+            </div>
+        </aside>
+
+        <!-- Right Panel — Login Form -->
+        <main class="form-panel">
+            <div class="form-container login-container">
+                <div class="form-header">
+                    <div class="mobile-logo">
+                        <div class="logo-icon"><i class="fas fa-rocket"></i></div>
+                        <span class="logo-text">NexusID</span>
+                    </div>
+                    <div class="login-avatar">
+                        <div class="avatar-ring">
+                            <div class="avatar-circle">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="form-title">Sign In</h2>
+                    <p class="form-subtitle">Enter your credentials to access your account</p>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <div class="input-group" id="group-loginEmail">
+                        <label for="loginEmail">Email or Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="loginEmail" name="loginEmail" placeholder="you@example.com" required autocomplete="username">
+                            <span class="input-focus-border"></span>
+                        </div>
+                        <span class="error-message" id="error-loginEmail"></span>
+                    </div>
+
+                    <div class="input-group" id="group-loginPassword">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="toggle-password" onclick="togglePassword('loginPassword', this)" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <span class="input-focus-border"></span>
+                        </div>
+                        <span class="error-message" id="error-loginPassword"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label remember-me" for="rememberMe">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkbox-custom"><i class="fas fa-check"></i></span>
+                            <span class="checkbox-text">Remember me</span>
+                        </label>
+                        <a href="#" class="link forgot-link" id="forgotPasswordLink">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit btn-login" id="loginBtn">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-loader"><i class="fas fa-circle-notch fa-spin"></i></span>
+                        <i class="fas fa-arrow-right btn-icon"></i>
+                    </button>
+                </form>
+
+                <!-- Social Login -->
+                <div class="social-divider">
+                    <span>or continue with</span>
+                </div>
+                <div class="social-buttons">
+                    <button class="btn-social btn-google" id="btnGoogleLogin" type="button">
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        <span>Google</span>
+                    </button>
+                    <button class="btn-social btn-facebook" id="btnFacebookLogin" type="button">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="btn-social btn-github" id="btnGithubLogin" type="button">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+
+                <p class="form-footer">
+                    Don't have an account? <a href="signup.html" class="link">Create Account <i class="fas fa-arrow-right"></i></a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal-overlay" id="forgotModal">
+        <div class="modal-content forgot-modal">
+            <button class="modal-close" id="closeForgotModal" type="button"><i class="fas fa-xmark"></i></button>
+            <div class="modal-icon">
+                <i class="fas fa-key"></i>
+            </div>
+            <h3>Reset Password</h3>
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            <form id="forgotForm" novalidate>
+                <div class="input-group" id="group-forgotEmail">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="forgotEmail" name="forgotEmail" placeholder="Enter your email" required>
+                        <span class="input-focus-border"></span>
+                    </div>
+                    <span class="error-message" id="error-forgotEmail"></span>
+                </div>
+                <button type="submit" class="btn btn-primary" id="resetBtn">
+                    <span class="btn-text">Send Reset Link</span>
+                    <span class="btn-loader"><i class="fas fa-circle-notch fa-spin"></i></span>
+                    <i class="fas fa-paper-plane btn-icon"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Success Toast -->
+    <div class="toast" id="loginToast">
+        <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="toast-content">
+            <strong>Login Successful!</strong>
+            <span>Redirecting to your dashboard...</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
